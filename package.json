@@ -1,0 +1,33 @@
+{
+  "name": "enterprise_software_system",
+  "version": "1.0.0",
+  "description": "Project for enterprise software system",
+  "main": "server.js",
+  "scripts": {
+    "client-install": "npm install --prefix client",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/render97/enterprise_software_system.git"
+  },
+  "author": "Redner Ivan Cabra",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/render97/enterprise_software_system/issues"
+  },
+  "homepage": "https://github.com/render97/enterprise_software_system#readme",
+  "dependencies": {
+    "concurrently": "^6.2.0",
+    "config": "^3.3.6",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.12",
+    "react-icons": "^4.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
