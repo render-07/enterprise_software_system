@@ -1,4 +1,4 @@
-import { GET_CATEGORIES, ADD_CATEGORY, DELETE_CATEGORY } from '../actions/types';
+import { GET_CATEGORIES, ADD_CATEGORY, DELETE_CATEGORY, CATEGORIES_LOADING } from '../actions/types';
 
 const initialState = {
     categories: [
@@ -7,6 +7,7 @@ const initialState = {
         { id: 3, categoryName: 'Ricardo Milos' },
 
     ],
+    loading: false
 }
 
 export default function(state = initialState, action) {
@@ -14,6 +15,11 @@ export default function(state = initialState, action) {
         case GET_CATEGORIES:
             return {
                 ...state,
+            }
+        case CATEGORIES_LOADING:
+            return {
+                ...state,
+                loading: true
             }
         default:
             return state;

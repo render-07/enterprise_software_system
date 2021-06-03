@@ -1,4 +1,4 @@
-import { GET_CATEGORIES, ADD_CATEGORY, DELETE_CATEGORY } from './types';
+import { GET_CATEGORIES, ADD_CATEGORY, DELETE_CATEGORY, CATEGORIES_LOADING } from './types';
 
 export const getCategories = () => {
     return {
@@ -12,4 +12,10 @@ export const getCategories = () => {
     //         payload: res.data
     //     })
     // )
+}
+
+export const setCategoriesLoading = () => {
+    return {
+        type: CATEGORIES_LOADING
+    }
 }
