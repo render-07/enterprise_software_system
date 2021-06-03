@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
         .then(categories => res.json(categories))
 })
 
-// @route POST api/category
+// @route POST api/categories
 // @desc Crate item category
 // @access Public
 
