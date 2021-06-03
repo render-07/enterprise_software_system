@@ -15,6 +15,19 @@ export const getCategories = () => dispatch => {
     )
 }
 
+export const addCategory = (category) => dispatch => {
+    // return {
+    //     type: ADD_CATEGORY,
+    //     payload: category // passing some parameters need to be in the payload
+    // }
+    axios
+        .post('http://localhost:5000/api/categories', category)
+        .then(res => dispatch({
+            type: ADD_CATEGORY,
+            payload: res.data
+        }))
+}
+
 export const setCategoriesLoading = () => {
     return {
         type: CATEGORIES_LOADING

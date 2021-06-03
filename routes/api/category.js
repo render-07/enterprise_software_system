@@ -3,7 +3,6 @@ const router = express.Router();
 
 const Category = require('../../models/Category');
 
-
 // @route GET api/category
 // @desc Get all item category
 // @access Public
@@ -14,7 +13,7 @@ router.get('/', (req, res) => {
 })
 
 // @route POST api/categories
-// @desc Crate item category
+// @desc Create item category
 // @access Public
 
 router.post('/', (req, res) => {
@@ -22,8 +21,10 @@ router.post('/', (req, res) => {
         categoryName: req.body.categoryName
     });
 
-    newCategory.save()
-        .then(category => res.json(category));
+    newCategory
+        .save()
+        .then(category => res.json(category))
+        // .catch(err => res.status(404).json( {success: false} ));
 })
 
 
