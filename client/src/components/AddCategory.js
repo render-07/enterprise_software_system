@@ -14,17 +14,22 @@ const AddCategory = () => {
         // Prevents from actually submitting into a page 
         e.preventDefault();
 
+        // Simple validation
         if (!text) {
             alert('Add a category please');
             return;
         }
 
+        // Create new object of Category Model
+        // and the value is from the state where user input are stored.
         const newCategory = {
             categoryName: text
         };
 
+        // Dispatch
         dispatch(addCategory(newCategory));
 
+        // Clear state.
         setText('');
     }
 
