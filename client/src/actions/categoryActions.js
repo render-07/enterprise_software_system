@@ -28,6 +28,19 @@ export const addCategory = (category) => dispatch => {
         }))
 }
 
+export const deleteCategory = (id) => dispatch => {
+    // return {
+    //     type: DELETE_CATEGORY,
+    //     payload: id // passing some parameters need to be in the payload
+    // }
+    axios
+        .delete(`http://localhost:5000/api/categories/${id}`)
+        .then(res => dispatch({
+            type: DELETE_CATEGORY,
+            payload: id
+        }))
+}
+
 export const setCategoriesLoading = () => {
     return {
         type: CATEGORIES_LOADING

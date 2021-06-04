@@ -58,7 +58,14 @@ body {
   background: #f4f4f4;
   margin: 20px 5px 0px;
   padding: 10px 20px;
-  cursor: pointer;
+}
+
+.category:focus {
+  outline: none;
+}
+
+.category:active {
+  transform: scale(0.98);
 }
 
 .category h3 {
