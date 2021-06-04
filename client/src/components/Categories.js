@@ -15,6 +15,7 @@ const Categories = () => {
     // so the name must be followed in deconstructuring.
     const { categories } = category;
     
+    // useEffect is equivalent to componentDidMount()
     useEffect(() => { 
         dispatch(getCategories()); 
     }, []);

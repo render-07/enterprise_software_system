@@ -56,13 +56,39 @@ body {
 
 .category {
   background: #f4f4f4;
-  margin: 5px;
+  margin: 20px 5px 0px;
   padding: 10px 20px;
-  cursor: pointer;
+}
+
+.category:focus {
+  outline: none;
+}
+
+.category:active {
+  transform: scale(0.98);
 }
 
 .category h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.form-control {
+  margin: 20px 0;
+}
+
+.form-control input {
+  width: 99%;
+  height: 40px;
+  margin: 5px;
+  padding: 3px 10px;
+  font-size: 17px;
+}
+
+.btn-form-block {
+  display: block;
+  width: 25%;
+  background-color: green;
+  margin: 0 auto;
 }
