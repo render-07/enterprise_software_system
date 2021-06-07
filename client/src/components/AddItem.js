@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addItem } from '../actions/itemActions';
-// import { Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Input } from 'reactstrap';
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 
-const AddItem = ({handleShow, handleClose, show}) => {
+const AddItem = ({handleShow, handleClose, show, categoryID}) => {
 
     // Call dispatch
     const dispatch = useDispatch();
@@ -24,7 +23,8 @@ const AddItem = ({handleShow, handleClose, show}) => {
         const newItem = {
             itemName: itemName,
             quantity: quantity,
-            price: price
+            price: price,
+            categoryID, categoryID
         };
 
         // Dispatch
@@ -46,7 +46,6 @@ const AddItem = ({handleShow, handleClose, show}) => {
             <Modal.Body>
                 <div className="center">
                     <form onSubmit={onSubmit}>
-
                         <div className="inputbox">
                             <input type="text" required="required" 
                                 value={itemName}

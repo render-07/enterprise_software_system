@@ -18,14 +18,14 @@ const ItemSchema = new Schema({
     },
 
     // supplierID:{
-    //     type: Schema.Types.ObjectId,
+    //     type: String,
     //     required: true
     // },
 
-    // categoryID:{
-    //     type: Schema.Types.ObjectId,
-    //     required: true
-    // },
+    categoryID:{
+        type: String,
+        required: true
+    },
 
     dateAdded:{
         type: Date,

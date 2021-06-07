@@ -18,6 +18,7 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     const newCategory = new Category({
+        categoryID: req.body.categoryID,
         categoryName: req.body.categoryName
     });
 

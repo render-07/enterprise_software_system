@@ -1,27 +1,25 @@
-import { FaPlusCircle, FaTimesCircle } from 'react-icons/fa'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { deleteCategory } from '../actions/categoryActions';
-import {useState} from 'react'
+import { useState, useEffect } from 'react'
 import AddItem from './AddItem';
 import ItemTable from './Tables/ItemTable';
 
-const SingleCategory = ({category, items}) => {
+const SingleCategory = ({category, categoryID, items}) => {
+    // Call dispatch
+    const dispatch = useDispatch();
 
     // Component state
     const [showItems, setShowItems] = useState(false)
+    const [showAddItem, setShowAddItem] = useState(false);
 
     const toggleShowItems = () => {
         setShowItems(!showItems)
     }
-       
-    const [showAddItem, setShowAddItem] = useState(false);
 
     const handleClose = () => setShowAddItem(false);
     const handleShow = () => setShowAddItem(true);
 
-
-    // Call dispatch
-    const dispatch = useDispatch();
+    // console.log(items.map((item) => item.categoryID == category.categoryID && ' equal'))
 
     return (
         
@@ -49,8 +47,16 @@ const SingleCategory = ({category, items}) => {
                     </button> 
                 </h3>
             </div>
-            <AddItem handleShow={handleShow} handleClose={handleClose} show={showAddItem}/>
+            
+            <AddItem handleShow={handleShow} handleClose={handleClose} show={showAddItem} categoryID={categoryID}/>
             {showItems && <ItemTable items={items}/>}
+            {/* {items.map((item) => (
+                category.categoryID == item.categoryID ? showItems && <ItemTable items={item}/> : null
+            ))}  */}
+
+            {/* {items.map((item) => item.categoryID == category.categoryID && (showItems && <ItemTable items={item}/>))} */}
+
+
         </div>
     )
 }
