@@ -13,13 +13,7 @@ const AddCategory = () => {
     const onSubmit = (e) => {
         // Prevents from actually submitting into a page 
         e.preventDefault();
-
-        // Simple validation
-        if (!text) {
-            alert('Add a category please');
-            return;
-        }
-
+        
         // Create new object of Category Model
         // and the value is from the state where user input are stored.
         const newCategory = {
@@ -36,7 +30,7 @@ const AddCategory = () => {
     return (
         <form className='add-form' onSubmit={onSubmit}>
             <div className="form-control">
-                <input type='text' placeholder='Add category' 
+                <input type='text' placeholder='Add category' required='required' 
                     value={text} 
                     onChange={(e) => setText(e.target.value)}/>
             </div>
