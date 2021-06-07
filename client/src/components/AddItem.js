@@ -19,23 +19,6 @@ const AddItem = ({handleShow, handleClose, show}) => {
         // Prevents from actually submitting into a page 
         e.preventDefault();
 
-        // Simple validation
-        if (!itemName) {
-            alert('Add an item name');
-            return;
-        }
-
-        if (!quantity) {
-            alert('Add quantity');
-            return;
-        }
-
-
-        if (!price) {
-            alert('Add price');
-            return;
-        }
-
         // Create new object of Category Model
         // and the value is from the state where user input are stored.
         const newItem = {
@@ -47,6 +30,8 @@ const AddItem = ({handleShow, handleClose, show}) => {
         // Dispatch
         dispatch(addItem(newItem));
 
+        handleClose();
+        
         // Clear state.
         setItemName('');
         setQuantity('');
