@@ -55,41 +55,44 @@ const AddItem = ({handleShow, handleClose, show}) => {
 
     return (
         <Modal show={show} onHide={handleClose}>
-            <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
+            <Modal.Header>
+                <Modal.Title>Add new item</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <form className='form-add-item' onSubmit={onSubmit}>
-                    <label className='form-control-label'>Item name:</label>
-                    <input type="text" class="form-control-input" placeholder="Item name"
-                        value={itemName} 
-                        onChange={(e) => setItemName(e.target.value)}></input>
+                <div className="center">
+                    <form onSubmit={onSubmit}>
 
-                    <label className='form-control-label'>Quantity:</label>
-                    <input type="number" class="form-control-input" placeholder="Quantity"
-                        value={quantity} 
-                        onChange={(e) => setQuantity(e.target.value)}></input>
+                        <div className="inputbox">
+                            <input type="text" required="required" 
+                                value={itemName}
+                                onChange={(e) => setItemName(e.target.value)}/>
+                            <span>Item name</span>
+                        </div>
 
-                    <label className='form-control-label'>Price:</label>
-                    <input type="number" class="form-control-input" placeholder="Price"
-                        value={price} 
-                        onChange={(e) => setPrice(e.target.value)}></input>
+                        <div className="inputbox">
+                            <input type="number" required="required"
+                                value={quantity} 
+                                onChange={(e) => setQuantity(e.target.value)}/>
+                            <span>Quantity</span>
+                        </div>
 
-                    <input className='btn btn-form-block' type='submit' value='Save item'/>  
-                </form>
-            </Modal.Body>
+                        <div className="inputbox">
+                            <input type="number" required="required"
+                                value={price} 
+                                onChange={(e) => setPrice(e.target.value)}/>
+                            <span>Price</span>
+                        </div>
 
-
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
-      </Modal>
-
+                        <Modal.Footer>
+                            <Button style={{backgroundColor: 'green'}}
+                                type='submit' value='Add item'>
+                                Add item
+                            </Button>
+                        </Modal.Footer>
+                    </form>
+                </div>
+            </Modal.Body>  
+        </Modal>
     )
 }
 

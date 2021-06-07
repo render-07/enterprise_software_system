@@ -38,8 +38,8 @@ const SingleCategory = ({category, items}) => {
                     
                     <button className = 'side-btn'
                             onClick={handleShow}
-                            style={showAddItem ? {backgroundColor: 'red'} : {backgroundColor: 'green'}}>
-                            {showAddItem ? 'Close' : 'Add new item'}
+                            style={{backgroundColor: 'green'}}>
+                            Add new item
                     </button> 
                     
                     <button className = 'side-btn'
