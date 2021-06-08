@@ -15,7 +15,6 @@ body {
   margin: 30px auto;
   overflow: auto;
   min-height: 300px;
-  border: 1px solid steelblue;
   padding: 30px;
   border-radius: 5px;
 }
@@ -28,8 +27,6 @@ body {
 }
 
 .btn {
-  display: inline-block;
-  color: #fff;
   border: none;
   padding: 10px 20px;
   margin: 5px;
@@ -57,6 +54,25 @@ body {
   background: #dbffef;
   padding: 10px 20px;
   margin: 10px 0px;
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  align-items: center;
+  grid-gap: 5rem;
+  line-height: 1.8;
+}
+
+.side-btn {
+  margin: 0px 10px;
+  align-items: center;
+  float: right;
+}
+
+.side-btn:focus {
+  outline: none;
+}
+
+.side-btn:active {
+  transform: scale(0.98);
 }
 
 /* .category:focus {
@@ -167,6 +183,7 @@ body {
   width: 20%;
   background-color: green;
   margin: 0 auto;
+  color: #fff;
 }
 
 .add-form {
@@ -199,28 +216,4 @@ table th {
   text-align: center;
   background-color: #69c79d;
   color: white;
-}
-
-.side-btn {
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 18px;
-  font-family: inherit;
-  margin: 0px 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  float: right;
-  padding: 5px 5px;
-}
-
-.side-btn:focus {
-  outline: none;
-}
-
-.side-btn:active {
-  transform: scale(0.98);
 }

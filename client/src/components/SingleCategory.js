@@ -23,27 +23,34 @@ const SingleCategory = ({category, categoryID, items}) => {
     return (
         <div className="wrapper">
             <div className='category'>
-                <h3>{category.categoryName}
-                    <button className = 'side-btn'
+                <div className="category-name">
+                    <h3>{category.categoryName}</h3>
+                </div>
+
+                <div className="side-btn">    
+
+                    <button type="button" class="btn" 
+                            onClick={toggleShowItems}
+                            style={showItems ? {color: 'white', backgroundColor: 'red'} : {color: 'white', backgroundColor: 'black'}}>
+                            {showItems ? 'Close' : 'Show items'}
+                    </button>
+                    
+                    <button type="button" class="btn" 
+                            onClick={handleShow}
+                            style={{color: 'white', backgroundColor: 'green'}}>
+                            Add new item
+                    </button> 
+        
+                    <button type="button" class="btn" 
                             onClick={() => dispatch(deleteCategory(category._id))}
                             style={{color: 'white', backgroundColor: 'red'}}>
                             Delete this category
                     </button> 
+                    
 
-                    <h4>|</h4>
+                </div>
                     
-                    <button className = 'side-btn'
-                            onClick={handleShow}
-                            style={{backgroundColor: 'green'}}>
-                            Add new item
-                    </button> 
-                    
-                    <button className = 'side-btn'
-                            onClick={toggleShowItems}
-                            style={showItems ? {backgroundColor: 'red'} : {backgroundColor: 'black'}}>
-                            {showItems ? 'Close' : 'Show items'}
-                    </button> 
-                </h3>
+                
             </div>
             
             <AddItem handleClose={handleClose} show={showAddItem} categoryID={categoryID} title={category.categoryName}/>
