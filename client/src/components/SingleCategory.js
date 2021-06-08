@@ -1,6 +1,6 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { deleteCategory } from '../actions/categoryActions';
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import AddItem from './AddItem';
 import ItemTable from './Tables/ItemTable';
 
@@ -19,10 +19,8 @@ const SingleCategory = ({category, categoryID, items}) => {
     const handleClose = () => setShowAddItem(false);
     const handleShow = () => setShowAddItem(true);
 
-    // console.log(items.map((item) => item.categoryID == category.categoryID && ' equal'))
-
+    console.log(items)
     return (
-        
         <div className="wrapper">
             <div className='category'>
                 <h3>{category.categoryName}
@@ -48,15 +46,8 @@ const SingleCategory = ({category, categoryID, items}) => {
                 </h3>
             </div>
             
-            <AddItem handleShow={handleShow} handleClose={handleClose} show={showAddItem} categoryID={categoryID}/>
+            <AddItem handleClose={handleClose} show={showAddItem} categoryID={categoryID} title={category.categoryName}/>
             {showItems && <ItemTable items={items}/>}
-            {/* {items.map((item) => (
-                category.categoryID == item.categoryID ? showItems && <ItemTable items={item}/> : null
-            ))}  */}
-
-            {/* {items.map((item) => item.categoryID == category.categoryID && (showItems && <ItemTable items={item}/>))} */}
-
-
         </div>
     )
 }

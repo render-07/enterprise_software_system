@@ -4,7 +4,7 @@ import { addItem } from '../actions/itemActions';
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 
-const AddItem = ({handleShow, handleClose, show, categoryID}) => {
+const AddItem = ({handleClose, show, categoryID, title}) => {
 
     // Call dispatch
     const dispatch = useDispatch();
@@ -41,7 +41,7 @@ const AddItem = ({handleShow, handleClose, show, categoryID}) => {
     return (
         <Modal show={show} onHide={handleClose}>
             <Modal.Header>
-                <Modal.Title>Add new item</Modal.Title>
+                <Modal.Title>Add new item ({title})</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <div className="center">
@@ -65,6 +65,15 @@ const AddItem = ({handleShow, handleClose, show, categoryID}) => {
                                 value={price} 
                                 onChange={(e) => setPrice(e.target.value)}/>
                             <span>Price</span>
+                        </div>
+
+                        <div className="inputbox">
+                            <select id="suppliers" name="suppliers" required>
+                                <option value="">None</option>
+                                <option value="australia">Australia</option>
+                                <option value="canada">Canada</option>
+                                <option value="usa">USA</option>
+                            </select>
                         </div>
 
                         <Modal.Footer>
