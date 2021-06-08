@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addItem } from '../actions/itemActions';
-// import { Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Input } from 'reactstrap';
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 
-const AddItem = ({handleShow, handleClose, show}) => {
+const AddItem = ({handleClose, show, categoryID, title}) => {
 
     // Call dispatch
     const dispatch = useDispatch();
@@ -24,7 +23,8 @@ const AddItem = ({handleShow, handleClose, show}) => {
         const newItem = {
             itemName: itemName,
             quantity: quantity,
-            price: price
+            price: price,
+            categoryID, categoryID
         };
 
         // Dispatch
@@ -41,12 +41,11 @@ const AddItem = ({handleShow, handleClose, show}) => {
     return (
         <Modal show={show} onHide={handleClose}>
             <Modal.Header>
-                <Modal.Title>Add new item</Modal.Title>
+                <Modal.Title>Add new item ({title})</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <div className="center">
                     <form onSubmit={onSubmit}>
-
                         <div className="inputbox">
                             <input type="text" required="required" 
                                 value={itemName}
@@ -66,6 +65,15 @@ const AddItem = ({handleShow, handleClose, show}) => {
                                 value={price} 
                                 onChange={(e) => setPrice(e.target.value)}/>
                             <span>Price</span>
+                        </div>
+
+                        <div className="inputbox">
+                            <select id="suppliers" name="suppliers" required>
+                                <option value="">None</option>
+                                <option value="australia">Australia</option>
+                                <option value="canada">Canada</option>
+                                <option value="usa">USA</option>
+                            </select>
                         </div>
 
                         <Modal.Footer>

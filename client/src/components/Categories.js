@@ -24,9 +24,10 @@ const Categories = () => {
     const { items } = item;
 
     return (
-        categories.map((rec) => (
-            <SingleCategory key={rec._id} category={rec} items={items}/>)
-        )
+        categories.map((ctgry) => (                
+            <SingleCategory key={ctgry._id} category={ctgry} categoryID={ctgry.categoryID} 
+            items={items.filter(item => item.categoryID == ctgry.categoryID)}/>
+        ))
     )
 }
 

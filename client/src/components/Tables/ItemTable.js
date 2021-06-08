@@ -1,8 +1,6 @@
 import { useMemo, useEffect } from 'react'
-import {  useDispatch, useSelector } from 'react-redux';
 import { useTable } from 'react-table';
 import { COLUMNS } from './columns'
-import { getItems } from '../../actions/itemActions';
 
 export const ItemTable = ({items}) => {
 

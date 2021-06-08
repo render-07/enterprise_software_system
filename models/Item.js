@@ -17,16 +17,16 @@ const ItemSchema = new Schema({
         required: true
     },
 
+    categoryID:{
+        type: String,
+        required: true
+    },
+
     // supplierID:{
-    //     type: Schema.Types.ObjectId,
+    //     type: String,
     //     required: true
     // },
-
-    // categoryID:{
-    //     type: Schema.Types.ObjectId,
-    //     required: true
-    // },
-
+    
     dateAdded:{
         type: Date,
         default: Date.now

@@ -21,6 +21,8 @@ router.post('/', (req, res) => {
         itemName: req.body.itemName,
         quantity: req.body.quantity,
         price: req.body.price,
+        categoryID: req.body.categoryID,
+        // supplierID: req.body.supplierID
     });
 
     newItem
