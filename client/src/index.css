@@ -78,15 +78,15 @@ body {
   margin-top: 2px;
 }
 
-.form-control {
+.add-category-form {
   margin: 20px 0;
 }
 
-.form-control input {
+.add-category-form input {
   display: block;
   width: 50%;
   height: 40px;
-  margin: 0 auto;
+  margin: 10px auto;
   padding: 3px 10px;
   font-size: 17px;
 }

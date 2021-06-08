@@ -32,7 +32,7 @@ const AddCategory = () => {
 
     return (
         <form className='add-form' onSubmit={onSubmit}>
-            <div className="form-control">
+            <div className="add-category-form">
                  <input type='text' placeholder='Add category ID' required='required' 
                     value={categoryID} 
                     onChange={(e) => setcategoryID(e.target.value)}/>
