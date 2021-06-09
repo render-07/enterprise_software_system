@@ -22,10 +22,10 @@ const ItemSchema = new Schema({
         required: true
     },
 
-    // supplierID:{
-    //     type: String,
-    //     required: true
-    // },
+    supplierID:{
+        type: String,
+        required: true
+    },
     
     dateAdded:{
         type: Date,

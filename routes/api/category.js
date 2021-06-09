@@ -3,7 +3,7 @@ const router = express.Router();
 
 const Category = require('../../models/Category');
 
-// @route GET api/category
+// @route GET api/categories
 // @desc Get all item category
 // @access Public
 
@@ -29,7 +29,7 @@ router.post('/', (req, res) => {
 })
 
 
-// @route DELETE api/category
+// @route DELETE api/categories
 // @desc DELETE item category
 // @access Public
 

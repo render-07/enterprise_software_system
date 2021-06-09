@@ -5,4 +5,6 @@ export const CATEGORIES_LOADING = 'CATEGORIES_LOADING';
 export const ADD_ITEM = 'ADD_ITEM';
 export const GET_ITEMS = 'GET_ITEMS';
 export const ITEMS_LOADING = 'ITEMS_LOADING';
+export const GET_SUPPLIERS = 'GET_SUPPLIERS';
+export const SUPPLIERS_LOADING = 'SUPPLIERS_LOADING';
 
