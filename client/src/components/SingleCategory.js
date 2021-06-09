@@ -4,7 +4,7 @@ import { useState } from 'react'
 import AddItem from './AddItem';
 import ItemTable from './Tables/ItemTable';
 
-const SingleCategory = ({category, categoryID, items}) => {
+const SingleCategory = ({category, categoryID, items, suppliers}) => {
     // Call dispatch
     const dispatch = useDispatch();
 
@@ -19,7 +19,6 @@ const SingleCategory = ({category, categoryID, items}) => {
     const handleClose = () => setShowAddItem(false);
     const handleShow = () => setShowAddItem(true);
 
-    console.log(items)
     return (
         <div className="wrapper">
             <div className='category'>
@@ -53,7 +52,9 @@ const SingleCategory = ({category, categoryID, items}) => {
                 
             </div>
             
-            <AddItem handleClose={handleClose} show={showAddItem} categoryID={categoryID} title={category.categoryName}/>
+            <AddItem handleClose={handleClose} show={showAddItem} 
+            categoryID={categoryID} title={category.categoryName}
+            suppliers={suppliers}/>
             {showItems && <ItemTable items={items}/>}
         </div>
     )

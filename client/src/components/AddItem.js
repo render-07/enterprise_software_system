@@ -4,7 +4,7 @@ import { addItem } from '../actions/itemActions';
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 
-const AddItem = ({handleClose, show, categoryID, title}) => {
+const AddItem = ({handleClose, show, categoryID, title, suppliers}) => {
 
     // Call dispatch
     const dispatch = useDispatch();
@@ -13,6 +13,7 @@ const AddItem = ({handleClose, show, categoryID, title}) => {
     const [itemName, setItemName] = useState('');
     const [quantity, setQuantity] = useState('');
     const [price, setPrice] = useState('');
+    const [supplier, setSupplier] = useState('');
 
     const onSubmit = (e) => {
         // Prevents from actually submitting into a page 
@@ -24,7 +25,8 @@ const AddItem = ({handleClose, show, categoryID, title}) => {
             itemName: itemName,
             quantity: quantity,
             price: price,
-            categoryID, categoryID
+            categoryID, categoryID,
+            supplierID: supplier
         };
 
         // Dispatch
@@ -36,7 +38,11 @@ const AddItem = ({handleClose, show, categoryID, title}) => {
         setItemName('');
         setQuantity('');
         setPrice('');
+        setSupplier('');
+
     }
+
+    console.log(suppliers);
 
     return (
         <Modal show={show} onHide={handleClose}>
@@ -68,11 +74,12 @@ const AddItem = ({handleClose, show, categoryID, title}) => {
                         </div>
 
                         <div className="inputbox">
-                            <select id="suppliers" name="suppliers" required>
-                                <option value="">None</option>
-                                <option value="australia">Australia</option>
-                                <option value="canada">Canada</option>
-                                <option value="usa">USA</option>
+                            <select value={supplier} onChange={(e) => setSupplier(e.target.value)} id="suppliers" name="suppliers" required>
+                                <option value="" disabled selected>Select Supplier</option>
+                                { suppliers.map(supplier => 
+                                 <option key = {supplier.supplierID} value={supplier.supplierID}>
+                                     {supplier.supplierName}
+                                 </option>) }
                             </select>
                         </div>
 
