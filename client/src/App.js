@@ -17,7 +17,7 @@ const App = () => {
   return (
     <Provider store = {store}>
       <div className="container">
-      <Header text='Categories' onAdd={toggleState} changeColor={showAddCategory}/>
+      <Header text='CATEGORIES' onAdd={toggleState} changeColor={showAddCategory} style = {{color: '#6a8076'}}/>
       {showAddCategory && <AddCategory/>}
       {/*<Categories categories = {categories} onDelete = {deleteCategory} onToggle = {toggleReminder}/>*/}
       <Categories/>
