@@ -30,19 +30,19 @@ const SingleCategory = ({category, categoryID, items, suppliers}) => {
 
                     <button type="button" class="btn" 
                             onClick={toggleShowItems}
-                            style={showItems ? {color: 'white', backgroundColor: 'red'} : {color: 'white', backgroundColor: 'black'}}>
+                            style={showItems ? {color: '#6a8076', backgroundColor: '#ffffff'} : {color: 'white', backgroundColor: '#69c79d'}}>
                             {showItems ? 'Close' : 'Show items'}
                     </button>
                     
                     <button type="button" class="btn" 
                             onClick={handleShow}
-                            style={{color: 'white', backgroundColor: 'green'}}>
+                            style={{color: 'white', backgroundColor: '#6a8076'}}>
                             Add new item
                     </button> 
         
                     <button type="button" class="btn" 
                             onClick={() => dispatch(deleteCategory(category._id))}
-                            style={{color: 'white', backgroundColor: 'red'}}>
+                            style={{color: 'white', backgroundColor: '#bc544b'}}>
                             Delete this category
                     </button> 
                     

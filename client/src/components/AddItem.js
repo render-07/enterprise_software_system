@@ -47,7 +47,7 @@ const AddItem = ({handleClose, show, categoryID, title, suppliers}) => {
     return (
         <Modal show={show} onHide={handleClose}>
             <Modal.Header>
-                <Modal.Title>Add new item ({title})</Modal.Title>
+                <Modal.Title className="center inputBox">Add new item ({title})</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <div className="center">
@@ -84,7 +84,7 @@ const AddItem = ({handleClose, show, categoryID, title, suppliers}) => {
                         </div>
 
                         <Modal.Footer>
-                            <Button style={{backgroundColor: 'green'}}
+                            <Button style={{backgroundColor: '#69c79d'}}
                                 type='submit' value='Add item'>
                                 Add item
                             </Button>
