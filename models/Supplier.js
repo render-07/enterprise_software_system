@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 const Schema =  mongoose.Schema;
 
-const CategorySchema = new Schema({
-    categoryID: {
+const SupplierSchema = new Schema({
+    supplierID: {
         type: String,
         required: true
     },
 
-    categoryName: {
+    supplierName: {
         type: String,
         required: true
     },
@@ -18,4 +18,4 @@ const CategorySchema = new Schema({
     }
 });
 
-module.exports = Category = mongoose.model('itemCategory', CategorySchema);
+module.exports = Supplier = mongoose.model('suppliers', SupplierSchema);

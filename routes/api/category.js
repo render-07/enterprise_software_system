@@ -3,8 +3,7 @@ const router = express.Router();
 
 const Category = require('../../models/Category');
 
-
-// @route GET api/category
+// @route GET api/categories
 // @desc Get all item category
 // @access Public
 
@@ -13,21 +12,24 @@ router.get('/', (req, res) => {
         .then(categories => res.json(categories))
 })
 
-// @route POST api/category
-// @desc Crate item category
+// @route POST api/categories
+// @desc Create item category
 // @access Public
 
 router.post('/', (req, res) => {
     const newCategory = new Category({
+        categoryID: req.body.categoryID,
         categoryName: req.body.categoryName
     });
 
-    newCategory.save()
-        .then(category => res.json(category));
+    newCategory
+        .save()
+        .then(category => res.json(category))
+        // .catch(err => res.status(404).json( {success: false} ));
 })
 
 
-// @route DELETE api/category
+// @route DELETE api/categories
 // @desc DELETE item category
 // @access Public
 

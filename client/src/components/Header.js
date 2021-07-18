@@ -7,7 +7,7 @@ const Header = ({text, onAdd, changeColor}) => {
             <AddCategoryButton 
                 text = {changeColor ? 'Close' : 'Add category'}
                 onAdd = {onAdd}
-                color = {changeColor ? 'red' : 'green'}/>
+                color = {changeColor ? '#bc544b' : '#69c79d'}/>
         </header>
     )
 }
