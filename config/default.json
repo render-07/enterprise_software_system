@@ -1,4 +1,4 @@
-{
-    "mongoURI": "mongodb://localhost:27017/enterprise_software_system",
-    "jwtSecret": "tangina"
-}
+    {
+        "mongoURI": "mongodb://localhost:27019/enterprise_software_system",
+        "jwtSecret": "tangina"
+    }
